@@ -7,4 +7,4 @@
     name: change-develop-pom-version
     description: Change pom version for develop when merge feature branch, with formatted numeric version
     entry: e4t_post_merge.sh
-    language: r
+    language: r 
