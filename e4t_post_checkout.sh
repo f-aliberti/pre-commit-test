@@ -11,10 +11,10 @@
 #other than that the hook’s exit status becomes the exit status of these two commands.
 # documentation: https://git-scm.com/docs/githooks
 
-if [ $3 != '1' ]
-    then echo 'git checkout did not checkout a branch - quitting';
-    exit
-fi
+#if [ $3 != '1' ]
+#    then echo 'git checkout did not checkout a branch - quitting';
+#    exit
+#fi
 
 branch=$(git rev-parse --abbrev-ref HEAD)
 
