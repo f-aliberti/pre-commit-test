@@ -45,3 +45,5 @@ if [[ $current_version != $new_version ]]
 fi
 
 echo 'no need set version'
+
+exit 0
