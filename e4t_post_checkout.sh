@@ -40,5 +40,7 @@ new_version=$current_version_cutted'-'$branch'-SNAPSHOT'
 echo 'version to set:' $new_version
 
 if [[ $current_version != $new_version ]]
-    then mvn versions:set -DgenerateBackupPoms=false -DnewVersion=$new_version;
+    then mvn versions:set -DgenerateBackupPoms=false -DnewVersion=$new_version &> null
 fi
+
+return 0
