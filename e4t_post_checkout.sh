@@ -40,10 +40,10 @@ new_version=$current_version_cutted'-'$branch'-SNAPSHOT'
 echo 'version to set:' $new_version
 
 if [[ $current_version != $new_version ]]
-   then MVN_OUTPUT=$(mvn versions:set -DgenerateBackupPoms=false -DnewVersion=$new_version &> null)
+   then #$(mvn versions:set -DgenerateBackupPoms=false -DnewVersion=$new_version &> null)
+    python maven.py
    if [ $? -ne 0 ] 
    then
-   echo '${MVN_OUTPUT}'
-        exit 1
+    exit 1
     fi
 fi
