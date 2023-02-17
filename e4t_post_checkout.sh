@@ -42,8 +42,4 @@ echo 'version to set:' $new_version
 if [[ $current_version != $new_version ]]
    then #$(mvn versions:set -DgenerateBackupPoms=false -DnewVersion=$new_version &> null)
     python maven.py
-   if [ $? -ne 0 ] 
-   then
-    exit 1
-    fi
 fi
