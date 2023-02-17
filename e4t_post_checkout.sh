@@ -41,9 +41,4 @@ echo 'version to set:' $new_version
 
 if [[ $current_version != $new_version ]]
     then mvn versions:set -DgenerateBackupPoms=false -DnewVersion=$new_version;
-    exit
 fi
-
-echo 'no need set version'
-
-exit 0
