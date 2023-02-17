@@ -11,10 +11,10 @@
 #other than that the hook’s exit status becomes the exit status of these two commands.
 # documentation: https://git-scm.com/docs/githooks
 
-if [ $PRE_COMMIT_CHECKOUT_TYPE != '1' ]
-    then echo 'git checkout did not checkout a branch - quitting';
-    exit
-fi
+#if [ $PRE_COMMIT_CHECKOUT_TYPE != '1' ]
+#    then echo 'git checkout did not checkout a branch - quitting';
+#    exit
+#fi
 
 branch=$(git rev-parse --abbrev-ref HEAD)
 
@@ -26,7 +26,7 @@ fi
 branch="${branch#'feature/'}"  
 
 #echo $branch
-#[[ $branch =~ ^E4T[0-9]{4}$ ]] || echo 'Remane branch with E4TXXXX (X are [0-9] digit)'
+[[ $branch =~ ^E4T[0-9]{4}$ ]] || echo 'Remane branch with E4TXXXX (X are [0-9] digit)'
 
 # get current version of the top level pom
 current_version=$(mvn help:evaluate -Dexpression=project.version | grep -v '\[.*')
