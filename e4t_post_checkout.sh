@@ -44,5 +44,5 @@ if [[ $current_version != $new_version ]]
     python -c 'import sys;
 import os;
 import subprocess;
-subprocess.Popen(["mvn", "versions:set","-DgenerateBackupPoms=false","-DnewVersion="+sys.argv[1],], stdout=open(os.devnull,"w"), stderr=subprocess.STDOUT) '$new_version
+subprocess.Popen(["mvn", "versions:set","-DgenerateBackupPoms=false","-DnewVersion="+sys.argv[1],], stdout=open(os.devnull,"w"), stderr=subprocess.STDOUT)' $new_version
 fi
