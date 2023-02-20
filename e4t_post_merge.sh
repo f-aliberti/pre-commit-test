@@ -19,4 +19,7 @@ new_version=$current_version'-SNAPSHOT'
 echo 'version to set:' $new_version
 
 # run maven versions plugin to set new version
-mvn versions:set -DgenerateBackupPoms=false -DnewVersion=$new_version
+python -c 'import sys;
+import os;
+import subprocess;
+subprocess.Popen(["mvn", "versions:set","-DgenerateBackupPoms=false","-DnewVersion="+sys.argv[1],], stdout=open(os.devnull,"w"), stderr=subprocess.STDOUT)' $new_version
