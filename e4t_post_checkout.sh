@@ -42,6 +42,7 @@ echo 'version to set:' $new_version
 if [[ $current_version != $new_version ]]
    then
     python -c 'import sys;
-    import os;
-    import subprocess;subprocess.Popen(["mvn", "versions:set","-DgenerateBackupPoms=false","-DnewVersion="+sys.argv[1],], stdout=open(os.devnull,"w"), stderr=subprocess.STDOUT) '$new_version
+import os;
+import subprocess;
+subprocess.Popen(["mvn", "versions:set","-DgenerateBackupPoms=false","-DnewVersion="+sys.argv[1],], stdout=open(os.devnull,"w"), stderr=subprocess.STDOUT) '$new_version
 fi
