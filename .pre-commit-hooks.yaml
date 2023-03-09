@@ -3,8 +3,18 @@
     description: Change pom version for feature branch, with formatted branch name, based on Jira's issue
     entry: e4t_post_checkout.sh
     language: script
+-   id: chfeatrev
+    name: change-feature-pom-revision
+    description: Change pom revision for feature branch, with formatted branch name, based on Jira's issue, only for multi-module project
+    entry: e4t_post_checkout_multi.sh
+    language: script
 -   id: chdevvers
     name: change-develop-pom-version
     description: Change pom version for develop when merge feature branch, with formatted numeric version
     entry: e4t_post_merge.sh
+    language: script 
+-   id: chdevrev
+    name: change-develop-pom-revision
+    description: Change pom revision for develop when merge feature branch, with formatted numeric version, only for multi-module project
+    entry: e4t_post_merge_multi.sh
     language: script 
