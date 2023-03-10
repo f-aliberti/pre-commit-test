@@ -19,4 +19,4 @@ new_version=$current_version'-SNAPSHOT'
 echo 'version to set:' $new_version
 
 # run maven versions plugin to set new version
-mvn versions:set-property -Dproperty=revision -DgenerateBackupPoms=false -DnewVersion=$new_version
+mvn versions:set-property -Dproperty=revision -DgenerateBackupPoms=false -DnewVersion=$new_version -q
