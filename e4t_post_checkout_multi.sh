@@ -40,7 +40,7 @@ new_version=$current_version_cutted'-'$branch'-SNAPSHOT'
 echo 'version to set:' $new_version
 
 if [[ $current_version != $new_version ]]; then
-    if mvn versions:set -DgenerateBackupPoms=false -DnewVersion=$new_version; then
+    if mvn versions:set-property -Dproperty=revision -DnewVersion=$new_version; then
         echo "Version changed via Maven"
     else
         echo "Version change via Maven FAILED"
